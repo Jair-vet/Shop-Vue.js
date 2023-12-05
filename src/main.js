@@ -15,12 +15,13 @@ import { firebaseApp } from './config/firebase'
 const app = createApp(App)
 
 app.use(createPinia())
-app.use(plugin, defaultConfig(config))
-app.use(router)
-
 app.use(VueFire, {
     firebaseApp,
     modules: [VueFireAuth()],
 })
+
+app.use(plugin, defaultConfig(config))
+app.use(router)
+
 
 app.mount('#app')

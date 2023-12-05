@@ -1,6 +1,9 @@
 <script setup>
-import Link from '@/components/link.vue';
+  import Link from '@/components/link.vue';
+  import useImage from '@/composables/useImage'
 
+
+  const { url, onFileChange, isImageUploaded } = useImage()
 
 </script>
 
@@ -19,7 +22,7 @@ import Link from '@/components/link.vue';
 
       <!-- Form -->
         <div class="flex justify-center md:mr-0 md:ml-0 mr-8 ml-8 bg-gray-300 shadow-lg rounded-md">
-          <div class="p-10 w-full 2xl:w-2/4">
+          <div class="p-10 w-full xl:w-3/4">
             <FormKit
               type="form" 
               submit-label="Add Product"
@@ -42,7 +45,17 @@ import Link from '@/components/link.vue';
                 validation="required"
                 :validation-messages="{required: 'Product Image is Required'}"
                 accept=".jpg"
+                @change="onFileChange"
               />
+
+              <div v-if="isImageUploaded" class="flex flex-col justify-center items-center">
+                <p class="font-black">Product Image</p>
+                <img 
+                  :src="url"
+                  alt="New Product Image"
+                  class="w-32"
+                />
+              </div>
 
               <!-- Category -->
               <FormKit
