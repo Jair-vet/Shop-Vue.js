@@ -5,19 +5,21 @@ import Link from '@/components/link.vue';
 </script>
 
 <template>
-    <div>
-        <Link
-          to="products"
-        >
-          Back
-        </Link>
+    <div class="h-screen">
+        <div class="flex md:justify-start justify-center">
+          <Link
+            to="products"
+            class=""
+          >Back
+          </Link>
+        </div>
       
-        <h1 class="text-4xl font-black text-gray-700 my-10">New Product</h1>
+        <h1 class="text-4xl font-black text-gray-700 my-10 md:text-left text-center">New Product</h1>
 
 
       <!-- Form -->
-        <div class="flex justify-center bg-gray-300 shadow rounded-md">
-          <div class="mt-10 p-10 w-full 2xl:w-2/4">
+        <div class="flex justify-center md:mr-0 md:ml-0 mr-8 ml-8 bg-gray-300 shadow-lg rounded-md">
+          <div class="p-10 w-full 2xl:w-2/4">
             <FormKit
               type="form" 
               submit-label="Add Product"
