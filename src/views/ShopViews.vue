@@ -13,7 +13,7 @@
 <template>
   <MainNav />
 
-  <main class="md:mt-20 mt-28 md:flex md:h-screen md:overflow-y-hidden">
+  <main class="md:mt-20 mt-40 md:flex md:h-screen md:overflow-y-hidden">
     <div class="md:w-2/3 md:screen md:overflow-y-scroll pt-10 pb-32 px-10">
       
       <p v-if="noResults" class="text-3xl font-black text-center p-10 text-red-800 uppercase">No Products</p>
