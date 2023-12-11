@@ -3,6 +3,7 @@
   import MainNav from '../components/MainNav.vue';
   import { userProductsStore } from '../stores/products';
   import ProductCard from '../components/ProductCard.vue'
+  import ShoppingCart from '../components/ShoppingCart.vue'
   
   const products = userProductsStore()
   const { filteredProducts, noResults } = storeToRefs(products)
@@ -14,7 +15,8 @@
   <MainNav />
 
   <main class="md:mt-20 mt-72 md:flex md:h-screen md:overflow-y-hidden">
-    <div class="md:w-2/3 md:screen md:overflow-y-scroll pt-10 pb-32 px-10">
+    
+    <div class="border-8 md:border-r-white border-b-white md:w-2/3 md:screen md:overflow-y-scroll pt-10 pb-32 px-10">
       
       <p v-if="noResults" class="text-3xl font-black text-center p-10 text-red-800 uppercase">No Products</p>
 
@@ -28,8 +30,9 @@
         />
       </div>
     </div>
+
     <aside class="md:w-1/3 md:screen md:overflow-y-scroll pt-10 pb-32 px-10">
-      <p>Carrito Aqui</p>
+      <ShoppingCart />
     </aside>
   </main>
 
