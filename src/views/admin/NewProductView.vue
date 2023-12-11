@@ -1,7 +1,7 @@
 <script setup>
   import Link from '@/components/link.vue';
   import useImage from '@/composables/useImage'
-  import { userProductsStore } from '../../stores/products'
+  import { userProductsStore } from '@/stores/products'
   import { reactive } from 'vue';
   import { useRouter } from 'vue-router';
 
@@ -87,7 +87,7 @@
                 <img 
                   :src="url"
                   alt="New Product Image"
-                  class="w-32"
+                  class="w-52 rounded-md"
                 />
               </div>
 
