@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import ShopView from '../views/ShopViews.vue'
 import AdminLayout from '../views/admin/AdminLayout.vue'
 import SalesView from '../views/admin/SalesView.vue'
+import EditProductView from '../views/admin/SalesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,6 +26,11 @@ const router = createRouter({
           path: 'productos/nuevo',
           name: 'new-product',
           component: () => import('../views/admin/NewProductView.vue'),
+        },
+        {
+          path: 'productos/editar/:id',
+          name: 'edit-product',
+          component: () => import('../views/admin/EditProductView.vue'),
         },
         {
           path: 'ventas',
