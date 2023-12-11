@@ -11,9 +11,7 @@ import Logo from './Logo.vue';
        <Logo />
     </div>
     <nav>
-        <Link 
-            to="admin"
-        >
+        <Link to="admin">
             Manage
         </Link>
     </nav>
