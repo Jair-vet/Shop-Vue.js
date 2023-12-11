@@ -17,8 +17,19 @@
 
   })
 
-  const submitHandler = data => {
-    console.log(data);
+  const submitHandler = async data => {
+    const { image, ...values } = data
+
+    try {
+      await products.createProduct({
+        ...values,
+        image: url.value
+      })
+
+    } catch (error) {
+      console.log(error);
+    }
+
   }
 
 </script>
@@ -84,7 +95,7 @@
                 name="category"
                 validation="required"
                 :validation-messages="{required: 'Category is Required'}"
-                :options="[1,2,3]"
+                :options="products.categoryOptions"
                 v-model.number="formData.category"
               />
 
