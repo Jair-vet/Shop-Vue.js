@@ -12,15 +12,16 @@
 
 <template>
 
-  <div>
-    <Link
-      to="new-product"
-    >
-      New Product
-    </Link>
+  <div class="h-screen">
+    <div class="flex md:justify-start justify-center">
+      <Link
+        to="new-product">
+        New Product
+      </Link>
+    </div>
+    
 
-    <h1 class="text-4xl font-black text-gray-700 my-10">Products</h1>
-
+    <h1 class="text-4xl font-black text-gray-700 my-10 md:text-left text-center">Products</h1>
     <p 
       v-if="products.noResults"
       class="text-3xl font-black text-center p-10 text-red-800 uppercase"
@@ -28,7 +29,7 @@
 
     <ul
       role="list"
-      class="grid md:mr-0 md:ml-0 mr-6 ml-6 grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-5"
+      class="grid md:mr-0 md:ml-0 mr-6 ml-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-5"
     >
       <Product 
         v-for="product in products.productsCollection"
