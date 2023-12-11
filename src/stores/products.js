@@ -80,6 +80,10 @@ export const userProductsStore = defineStore('products', () => {
 
     const noResults = computed(() => productsCollection.value.length === 0)
 
+    const filteredProducts = computed(() => {
+        return productsCollection.value
+    })
+
 
     return { 
         createProduct,
@@ -88,5 +92,6 @@ export const userProductsStore = defineStore('products', () => {
         productsCollection,
         categoryOptions,
         noResults,
+        filteredProducts,
     }
 })
