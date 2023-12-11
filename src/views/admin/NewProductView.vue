@@ -1,9 +1,25 @@
 <script setup>
   import Link from '@/components/link.vue';
   import useImage from '@/composables/useImage'
+  import { userProductsStore } from '../../stores/products'
+  import { reactive } from 'vue';
 
 
   const { url, onFileChange, isImageUploaded } = useImage()
+  const products = userProductsStore()
+
+  const formData = reactive({
+    name: '',
+    category: '',
+    price: '',
+    availability: '',
+    image: ''
+
+  })
+
+  const submitHandler = data => {
+    console.log(data);
+  }
 
 </script>
 
@@ -26,6 +42,8 @@
             <FormKit
               type="form" 
               submit-label="Add Product"
+              @submit="submitHandler"
+              :value="formData"
             >
               <!-- Name -->
               <FormKit
@@ -35,6 +53,7 @@
                 placeholder="Product Name"
                 validation="required"
                 :validation-messages="{required: 'Product Name is Required'}"
+                v-model.trim="formData.name"
               />
 
               <!-- Image -->
@@ -46,6 +65,7 @@
                 :validation-messages="{required: 'Product Image is Required'}"
                 accept=".jpg"
                 @change="onFileChange"
+                v-model.trim="formData.image"
               />
 
               <div v-if="isImageUploaded" class="flex flex-col justify-center items-center">
@@ -65,6 +85,7 @@
                 validation="required"
                 :validation-messages="{required: 'Category is Required'}"
                 :options="[1,2,3]"
+                v-model.number="formData.category"
               />
 
               <!-- Price -->
@@ -75,6 +96,7 @@
                 validation="required"
                 :validation-messages="{required: 'Price is Required'}"
                 min="1"
+                v-model.number="formData.price"
               />
 
               <!-- Available -->
@@ -85,6 +107,7 @@
                 validation="required"
                 :validation-messages="{required: 'Availability is Required'}"
                 min="1"
+                v-model.number="formData.availability"
               />
     
             </FormKit>
