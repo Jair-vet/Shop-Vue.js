@@ -14,7 +14,7 @@ export const userProductsStore = defineStore('products', () => {
     const categories = [
         { id: 1, name: 'Sweatshirts'},
         { id: 2, name: 'Tennis'},
-        { id: 3, name: 'glasses'},
+        { id: 3, name: 'Glasses'},
     ]
 
     const q = query(
