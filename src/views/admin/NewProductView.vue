@@ -3,10 +3,12 @@
   import useImage from '@/composables/useImage'
   import { userProductsStore } from '../../stores/products'
   import { reactive } from 'vue';
+  import { useRouter } from 'vue-router';
 
 
   const { url, onFileChange, isImageUploaded } = useImage()
   const products = userProductsStore()
+  const router = useRouter()
 
   const formData = reactive({
     name: '',
@@ -25,7 +27,8 @@
         ...values,
         image: url.value
       })
-
+      // Redirect
+      router.push({name: 'products'})
     } catch (error) {
       console.log(error);
     }
