@@ -66,7 +66,8 @@ export const useCartStore = defineStore('cart', () => {
 
             // Restart state
             $reset()
-            
+            coupon.$reset()
+
         } catch (error) {
             console.log(error);
         }
