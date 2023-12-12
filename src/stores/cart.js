@@ -63,9 +63,20 @@ export const useCartStore = defineStore('cart', () => {
                 total: total.value,
                 date: getCurrentDate()
             })
+
+            // Restart state
+            $reset()
+            
         } catch (error) {
             console.log(error);
         }
+    }
+
+    function $reset(){
+        items.value = []
+        subtotal.value = 0
+        taxes.value = 0
+        total.value = 0
     }
 
     const isItemInCart = id => items.value.findIndex(item => item.id === id)
