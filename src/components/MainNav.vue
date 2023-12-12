@@ -32,7 +32,7 @@
     </div>
 
     <nav>
-        <Link to="admin">
+        <Link to="sales">
             Manage
         </Link>
     </nav>
