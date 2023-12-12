@@ -23,7 +23,7 @@ export const useCartStore = defineStore('cart', () => {
        
         if(index >= 0) {
             if(isProductAvailable( item, index )) {
-                alert('Has alcanzado el limite')
+                alert('You have reached the limit')
                 return
             } 
             // Actualizar la cantidad
