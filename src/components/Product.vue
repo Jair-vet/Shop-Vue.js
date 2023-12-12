@@ -1,18 +1,24 @@
 <script setup>
     import { formatCurrency } from '../helpers';
     import { userProductsStore } from '../stores/products';
+    import { computed } from 'vue'
 
     const products = userProductsStore()
 
-    defineProps({
+    const props = defineProps({
         product: {
             type: Object
         }
     })
+
+    const isProductNotAvailable =  computed(() => props.product.availability === 0)
+
 </script>
 
 <template>
-    <li class="flex items-center space-x-6 border border-gray-200 p-6 rounded-md bg-white shadow">
+    <li 
+        :class="{'opacity-40' : isProductNotAvailable }"
+        class="flex items-center space-x-6 border border-gray-200 p-6 rounded-md bg-white shadow">
         <img 
             :src="product.image"
             :alt="product.name"
@@ -23,7 +29,8 @@
             <p class="text-green-600 font-extrabold">{{ formatCurrency(product.price) }}</p>
             <div class="flex items-center gap-3">
                 <p>{{ product.availability }} products</p>
-                <div className="w-2 h-2 opacity-75 rounded-full bg-green-400 animate-[ping_1s_ease-in-out_infinite]"></div>
+                <div v-if="isProductNotAvailable" className="w-2 h-2 opacity-75 rounded-full bg-red-400 animate-[ping_1s_ease-in-out_infinite]"></div>
+                <div v-else className="w-2 h-2 opacity-75 rounded-full bg-green-400 animate-[ping_1s_ease-in-out_infinite]"></div>
             </div>
         </div>
 
