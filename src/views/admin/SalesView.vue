@@ -1,5 +1,4 @@
 <script setup>
-  import Link from '@/components/link.vue';
   import { ref } from 'vue';
   import VueTailwindDatePicker from 'vue-tailwind-datepicker'
   import { useSalesStore } from '@/stores/sales'
@@ -16,12 +15,6 @@
 
 <template>
   <div class="h-screen">
-    <div class="flex md:justify-start justify-center">
-      <Link
-        to="admin">
-        Back
-      </Link>
-    </div>
     
     <h1 class="text-4xl font-black text-gray-700 my-10 md:text-left text-center">Sales summary</h1>
     
