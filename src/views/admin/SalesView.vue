@@ -2,9 +2,9 @@
   import Link from '@/components/link.vue';
   import { ref } from 'vue';
   import VueTailwindDatePicker from 'vue-tailwind-datepicker'
-  import { useSalesStore } from '../../stores/sales'
+  import { useSalesStore } from '@/stores/sales'
   import { formatCurrency } from '@/helpers';
-  import SaleDetails from '../../components/SaleDetails.vue';
+  import SaleDetails from '@/components/SaleDetails.vue';
 
   const sales = useSalesStore()
 

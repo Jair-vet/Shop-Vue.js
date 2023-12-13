@@ -2,7 +2,7 @@
   import {  ref, getDownloadURL, uploadBytesResumable  } from 'firebase/storage'
   import { collection, addDoc } from 'firebase/firestore'
   import { useFirebaseStorage, useFirestore  } from 'vuefire'
-  import { products } from '../../data/products'
+  import { products } from '@/data/products'
   const storage = useFirebaseStorage()
   const db = useFirestore();
   async function seedDB()  {

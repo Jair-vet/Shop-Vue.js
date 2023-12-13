@@ -1,7 +1,7 @@
 <script setup>
   import Link from '@/components/link.vue';
   import Product from '@/components/Product.vue'
-  import { userProductsStore } from '../../stores/products'
+  import { userProductsStore } from '@/stores/products'
 
   
   
