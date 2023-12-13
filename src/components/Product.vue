@@ -26,7 +26,7 @@
         />
         <div class="flex-auto">
             <h3 class="text-gray-700 font-black uppercase">{{ product.name }}</h3>
-            <p class="text-green-600 font-extrabold">{{ formatCurrency(product.price) }}</p>
+            <p class="text-green-600 font-extrabold">{{ formatCurrency(product.price) }} USD</p>
             <div class="flex items-center gap-3">
                 <p>{{ product.availability }} products</p>
                 <div v-if="isProductNotAvailable" className="w-2 h-2 opacity-75 rounded-full bg-red-400 animate-[ping_1s_ease-in-out_infinite]"></div>

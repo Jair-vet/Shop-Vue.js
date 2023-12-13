@@ -4,6 +4,7 @@
   import VueTailwindDatePicker from 'vue-tailwind-datepicker'
   import { useSalesStore } from '../../stores/sales'
   import { formatCurrency } from '@/helpers';
+  import SaleDetails from '../../components/SaleDetails.vue';
 
   const sales = useSalesStore()
 
@@ -35,14 +36,14 @@
         />
       </div>
 
-      <!-- Ventas -->
+      <!-- Sales -->
       <div class="md:w-1/2 lg:w-2/3 space-y-5 lg:h-screen lg:overflow-y-scroll p-5 pb-32">
           <p v-if="sales.isDateSelected" class="text-center text-lg font-bold text-emerald-700 uppercase">
               Sales of the date: <span class="font-black text-gray-800">{{ sales.date }}</span>
           </p>
           <p v-else class="text-3xl font-black text-center p-10 text-red-800 uppercase">Select one Day</p>
 
-          <div v-if="sales.salesCollection.length" class="space-y-5">
+          <div v-if="sales.salesCollection.length" class="space-y-5 h-screen">
               <p class="text-3xl font-black text-center p-10 text-gray-800 uppercase">Total of all Day:
                   <span class="font-black text-emerald-700">
                       {{ formatCurrency(sales.totalSalesOfDay) }}

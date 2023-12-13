@@ -10,7 +10,7 @@
         <input 
             type="text"
             placeholder="Enter a Coupon"
-            class="p-2 bg-white border-none w-full ring:border-none focus:border-none rounded-l-md placeholder:text-gray-300"
+            class="p-2 bg-white border-none w-full ring:border-none focus:border-none rounded-l-md text-gray-600 placeholder:text-gray-300"
             v-model="store.couponInput"
         />
 
