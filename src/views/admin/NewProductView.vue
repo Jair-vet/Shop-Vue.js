@@ -1,5 +1,5 @@
 <script setup>
-  import Link from '@/components/link.vue';
+  import Link from '@/components/Link.vue';
   import useImage from '@/composables/useImage'
   import { userProductsStore } from '@/stores/products'
   import { reactive } from 'vue';
